@@ -10,10 +10,12 @@ equivalent features to Spin.js, but for ActionScript 3.
 Quickstart
 ----------
 
-    import spin.Spinner;
-    var spinner:Spinner = new Spinner;
-    addChild(spinner);
-    spinner.spin();
+```actionscript
+import spin.Spinner;
+var spinner:Spinner = new Spinner;
+addChild(spinner);
+spinner.spin();
+```
 
 
 Advanced usage
@@ -22,25 +24,29 @@ Advanced usage
 The constructor of `spin.Spinner` takes optional parameters (although they have
 their own default values).  The signature looks like:
 
-    Spinner(
-        lineCount:uint = 12,
-        length:Number = 7,
-        thickness:Number = 5,
-        radius:Number = 10,
-        roundness:Number = 1,
-        color:uint = 0x000000,
-        speed:Number = 1,
-        trail:Number = 1,
-        opacity:Number = 0.25,
-        shadow:Boolean = false
-    )
+```actionscript
+Spinner(
+    lineCount:uint = 12,
+    length:Number = 7,
+    thickness:Number = 5,
+    radius:Number = 10,
+    roundness:Number = 1,
+    color:uint = 0x000000,
+    speed:Number = 1,
+    trail:Number = 1,
+    opacity:Number = 0.25,
+    shadow:Boolean = false
+)
+```
 
 Or you simply set these values into the same name of properties e.g.:
 
-    var spinner:Spinner = new Spinner;
-    spinner.color = 0xABCDEF;
-    spinner.opacity = 0.5;
-    spinner.shadow = true;
+```actionscript
+var spinner:Spinner = new Spinner;
+spinner.color = 0xABCDEF;
+spinner.opacity = 0.5;
+spinner.shadow = true;
+```
 
 
 Differences from Spin.js

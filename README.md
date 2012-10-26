@@ -41,7 +41,7 @@ Spinner(
 )
 ```
 
-Or you simply set these values into the same name of properties e.g.:
+Or you can simply set these values into the same name of properties e.g.:
 
 ```actionscript
 var spinner:Spinner = new Spinner;
@@ -68,13 +68,18 @@ though Spin.js takes 0 to 100 for this option.  We thought it's more natural.
 Open source
 -----------
 
-Written by JongChan Choi <http://0xabcdef.com/> for [Crosspop][].
+Written by JongChan Choi <http://0xabcdef.com/> to be used for [Crosspop][].
 
 It's distributed under [MIT license][].  Feel free to contribute via GitHub
-pull requests!
+pull requests!  Checkout the source code from [GitHub][1]:
+
+```console
+$ git clone git://github.com/crosspop/spin.as.git
+```
 
 [Crosspop]: http://crosspop.in/
 [MIT license]: http://crosspop.mit-license.org/
+[1]: https://github.com/crosspop/spin.as
 
 
 Changelog

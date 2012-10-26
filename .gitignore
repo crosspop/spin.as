@@ -1,0 +1,10 @@
+doc
+bin
+bin-debug
+bin-release
+html-template
+*.bat
+.settings
+.actionScriptProperties
+.flexLibProperties
+.project

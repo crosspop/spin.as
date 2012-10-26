@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Spin.as by crosspop</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Spin.as</h1>
+        <p>A spinning activity indicator for Flash/ActionScript</p>
+
+        <p class="view"><a href="https://github.com/crosspop/spin.as">View the Project on GitHub <small>crosspop/spin.as</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/crosspop/spin.as/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/crosspop/spin.as/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/crosspop/spin.as">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Spin.as</h1>
+
+<p>Spin.as is a straightforward port of <a href="http://fgnass.github.com/spin.js/">Spin.js</a>.  It has completely
+equivalent features to Spin.js, but for ActionScript 3. </p>
+
+<h2>Quickstart</h2>
+
+<div class="highlight"><pre><span class="kd">import</span> <span class="nx">spin</span><span class="p">.</span><span class="nx">Spinner</span><span class="o">;</span>
+<span class="k">var</span> <span class="nx">spinner</span><span class="o">:</span><span class="nx">Spinner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Spinner</span><span class="o">;</span>
+<span class="nx">addChild</span><span class="p">(</span><span class="nx">spinner</span><span class="p">);</span>
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">spin</span><span class="p">();</span>
+</pre></div>
+
+<h2>Advanced usage</h2>
+
+<p>The constructor of <code>spin.Spinner</code> takes optional parameters (although they have
+their own default values).  The signature looks like:</p>
+
+<div class="highlight"><pre><span class="nx">Spinner</span><span class="p">(</span>
+    <span class="nx">lineCount</span><span class="o">:</span><span class="nb">uint</span> <span class="o">=</span> <span class="mi">12</span><span class="o">,</span>
+    <span class="nx">length</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">7</span><span class="o">,</span>
+    <span class="nx">thickness</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">5</span><span class="o">,</span>
+    <span class="nx">radius</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">10</span><span class="o">,</span>
+    <span class="nx">roundness</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span>
+    <span class="nx">color</span><span class="o">:</span><span class="nb">uint</span> <span class="o">=</span> <span class="mh">0x000000</span><span class="o">,</span>
+    <span class="nx">speed</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span>
+    <span class="nx">trail</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mi">1</span><span class="o">,</span>
+    <span class="nx">opacity</span><span class="o">:</span><span class="nb">Number</span> <span class="o">=</span> <span class="mf">0.25</span><span class="o">,</span>
+    <span class="nx">shadow</span><span class="o">:</span><span class="nb">Boolean</span> <span class="o">=</span> <span class="kc">false</span>
+<span class="p">)</span>
+</pre></div>
+
+<p>Or you simply set these values into the same name of properties e.g.:</p>
+
+<div class="highlight"><pre><span class="k">var</span> <span class="nx">spinner</span><span class="o">:</span><span class="nx">Spinner</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Spinner</span><span class="o">;</span>
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="mi">0</span><span class="nx">xABCDEF</span><span class="o">;</span>
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">opacity</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">;</span>
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">shadow</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</pre></div>
+
+<h2>Differences from Spin.js</h2>
+
+<p>Although it's the almost same to Spin.js, there are several differences from it
+because Flash/ActionScript itself differs from HTML/JavaScript.</p>
+
+<p>For example, Spin.as lacks <code>rotate</code> that Spin.js has.  You can use <code>rotation</code>
+property of <code>flash.display.DisplayObject</code> instead.  (Indeed <code>spin.Spinner</code> is
+a subtype of <code>DisplayObject</code>.)</p>
+
+<p>Also note that <code>trail</code> has the value of floating number which is 0.0 to 1.0,
+though Spin.js takes 0 to 100 for this option.  We thought it's more natural.</p>
+
+<h2>Open source</h2>
+
+<p>Written by JongChan Choi <a href="http://0xabcdef.com/">http://0xabcdef.com/</a> for <a href="http://crosspop.in/">Crosspop</a>.</p>
+
+<p>It's distributed under <a href="http://crosspop.mit-license.org/">MIT license</a>.  Feel free to contribute via GitHub
+pull requests!</p>
+
+<h2>Changelog</h2>
+
+<h3>Version 1.0</h3>
+
+<p>Released on October 26, 2012. Initial release.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/crosspop">crosspop</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>

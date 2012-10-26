@@ -80,4 +80,4 @@ Changelog
 
 ### Version 1.0
 
-To be released.  Initial release.
+Released on October 26, 2012. Initial release.

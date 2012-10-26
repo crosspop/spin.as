@@ -1,6 +1,8 @@
 Spin.as
 =======
 
+**Preview here**: <http://wonderfl.net/c/dcgM>.
+
 Spin.as is a straightforward port of [Spin.js][].  It has completely
 equivalent features to Spin.js, but for ActionScript 3. 
 

@@ -45,7 +45,7 @@ package spin
 		 * @param opacity Opacity of the lines (0..1)
 		 * @param shadow Drop the shadow
 		 */
-		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, opacity = 0.25, shadow:Boolean = false)
+		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, opacity:Number = 0.25, shadow:Boolean = false)
 		{
 			this._length = length;
 			this._thickness = thickness;

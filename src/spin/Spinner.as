@@ -17,6 +17,7 @@ package spin
 		 * Afterglow percentage
 		 */
 		public var trail:Number;
+		public var opacity:Number;
 		private static var dropShadowFilter:DropShadowFilter = new DropShadowFilter(2, 90, 0x000000, 1, 2, 2, 1, 2, false, false, false);
 		private var _lineCount:int;
 		private var _length:Number;
@@ -40,7 +41,7 @@ package spin
 		 * @param trail Afterglow (0..1)
 		 * @param shadow Drop the shadow
 		 */
-		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, shadow:Boolean = false)
+		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, opacity = 0.25, shadow:Boolean = false)
 		{
 			this._length = length;
 			this._thickness = thickness;
@@ -51,6 +52,7 @@ package spin
 			this.lineCount = lineCount;
 			this.speed = speed;
 			this.trail = trail;
+			this.opacity = opacity;
 			this.lightPosition = 0;
 			animate(null);
 		}
@@ -164,7 +166,7 @@ package spin
 		{
 			var currentTime:int = getTimer();
 			for(var i:int=1; i<_lineCount; ++i)
-				Line(lines[int(i+lightPosition*_lineCount)%_lineCount]).alpha = trail==0?0.3:Math.max(i/_lineCount-1+trail, 0)/trail*0.7+0.3;
+				Line(lines[int(i+lightPosition*_lineCount)%_lineCount]).alpha = trail==0?opacity:Math.max(i/_lineCount-1+trail, 0)/trail*(1-opacity)+opacity;
 			Line(lines[int(lightPosition*_lineCount)%_lineCount]).alpha = 1;
 			lightPosition = (lightPosition+(currentTime-prevTime)*speed*0.001)%1;
 			prevTime = currentTime;

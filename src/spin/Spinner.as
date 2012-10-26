@@ -4,9 +4,18 @@ package spin
 	import flash.events.Event;
 	import flash.filters.DropShadowFilter;
 	import flash.utils.getTimer;
+	/**
+	 * A spinning activity indicator
+	 */
 	public class Spinner extends Sprite
 	{
+		/**
+		 * Rounds per second
+		 */
 		public var speed:Number;
+		/**
+		 * Afterglow percentage
+		 */
 		public var trail:Number;
 		private static var dropShadowFilter:DropShadowFilter = new DropShadowFilter(2, 90, 0x000000, 1, 2, 2, 1, 2, false, false, false);
 		private var _lineCount:int;
@@ -19,6 +28,18 @@ package spin
 		private var lines:Array;
 		private var prevTime:int;
 		private var lightPosition:Number;
+		/**
+		 * Create a Spinner instance
+		 * @param lineCount The number of lines to draw
+		 * @param length The length of each line
+		 * @param thickness The line thickness
+		 * @param radius The radius of the inner circle
+		 * @param roundness Roundness (0..1)
+		 * @param color The color of the line (0xRRGGBB)
+		 * @param speed Rounds per second
+		 * @param trail Afterglow (0..1)
+		 * @param shadow Drop the shadow
+		 */
 		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, shadow:Boolean = false)
 		{
 			this._length = length;
@@ -33,6 +54,9 @@ package spin
 			this.lightPosition = 0;
 			animate(null);
 		}
+		/**
+		 * The number of lines to draw
+		 */
 		public function set lineCount(value:int):void
 		{
 			this._lineCount = value;
@@ -49,6 +73,9 @@ package spin
 		{
 			return this._lineCount;
 		}
+		/**
+		 * The length of each line
+		 */
 		public function set length(value:Number):void
 		{
 			this._length = value;
@@ -58,6 +85,9 @@ package spin
 		{
 			return this._length;
 		}
+		/**
+		 * The line thickness
+		 */
 		public function set thickness(value:Number):void
 		{
 			this._thickness = value;
@@ -67,6 +97,9 @@ package spin
 		{
 			return this._thickness;
 		}
+		/**
+		 * The radius of the inner circle
+		 */
 		public function set radius(value:Number):void
 		{
 			this._radius = value;
@@ -76,6 +109,9 @@ package spin
 		{
 			return this._radius;
 		}
+		/**
+		 * Roundness (0..1)
+		 */
 		public function set roundness(value:Number):void
 		{
 			this._roundness = value;
@@ -85,6 +121,9 @@ package spin
 		{
 			return this._roundness;
 		}
+		/**
+		 * The color of the line (0xRRGGBB)
+		 */
 		public function set color(value:uint):void
 		{
 			this._color = value;
@@ -94,6 +133,9 @@ package spin
 		{
 			return this._color;
 		}
+		/**
+		 * Drop the shadow
+		 */
 		public function set shadow(value:Boolean):void
 		{
 			this._shadow = value;
@@ -103,11 +145,17 @@ package spin
 		{
 			return this._shadow;
 		}
+		/**
+		 * Start spin
+		 */
 		public function spin():void
 		{
 			prevTime = getTimer();
 			addEventListener(Event.ENTER_FRAME, animate);
 		}
+		/**
+		 * Pause spin
+		 */
 		public function pause():void
 		{
 			removeEventListener(Event.ENTER_FRAME, animate);

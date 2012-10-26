@@ -14,9 +14,12 @@ package spin
 		 */
 		public var speed:Number;
 		/**
-		 * Afterglow percentage
+		 * Afterglow (0..1)
 		 */
 		public var trail:Number;
+		/**
+		 * Opacity of the lines (0..1)
+		 */
 		public var opacity:Number;
 		private static var dropShadowFilter:DropShadowFilter = new DropShadowFilter(2, 90, 0x000000, 1, 2, 2, 1, 2, false, false, false);
 		private var _lineCount:int;
@@ -39,6 +42,7 @@ package spin
 		 * @param color The color of the line (0xRRGGBB)
 		 * @param speed Rounds per second
 		 * @param trail Afterglow (0..1)
+		 * @param opacity Opacity of the lines (0..1)
 		 * @param shadow Drop the shadow
 		 */
 		public function Spinner(lineCount:uint = 12, length:Number = 7, thickness:Number = 5, radius:Number = 10, roundness:Number = 1, color:uint = 0x000000, speed:Number = 1, trail:Number = 1, opacity = 0.25, shadow:Boolean = false)
